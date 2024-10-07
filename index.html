@@ -255,11 +255,23 @@
             document.getElementById('newsletter-modal').classList.remove('modal-open');
         }
 
+        function createBat() {
+            const bat = document.createElement('div');
+            bat.className = 'fixed w-12 h-8 bg-cover';
+            bat.style.backgroundImage = "url('https://www.svgrepo.com/show/317072/bat.svg')";
+            bat.style.top = `${Math.random() * 80 + 10}%`;
+            bat.style.left = '-50px';
+            bat.style.animation = `fly ${Math.random() * 5 + 5}s linear infinite`;
+            document.body.appendChild(bat);
+        }
+
+
         // Initialize the page
         loadCart();
         for (let i = 0; i < 5; i++) {
             createBat();
         }
+
 
         setTimeout(() => {
             document.getElementById('newsletter-modal').classList.add('modal-open');
